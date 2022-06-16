@@ -1,14 +1,21 @@
 package com.cg.employeeapp.model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "employee_db")
+@NamedQuery(name = "findByEmployeeName", query = "from Employee where employeeName=:employeeName")
 public class Employee {
 
 	@Id
@@ -18,6 +25,20 @@ public class Employee {
 	@Column(unique = true)
 	private String email;
 	private LocalDate hiredate;
+	
+	@OneToMany(fetch = FetchType.EAGER)
+	private List<Laptop> laptops = new ArrayList<>();
+	
+	
+
+
+	public List<Laptop> getLaptops() {
+		return laptops;
+	}
+
+	public void setLaptops(List<Laptop> laptops) {
+		this.laptops = laptops;
+	}
 
 	public Employee() {
 	}
@@ -67,5 +88,7 @@ public class Employee {
 		return "Employee [employeeId=" + employeeId + ", employeeName=" + employeeName + ", email=" + email
 				+ ", hiredate=" + hiredate + "]";
 	}
+
+	
 
 }

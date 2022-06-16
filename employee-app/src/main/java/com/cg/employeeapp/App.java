@@ -2,12 +2,14 @@ package com.cg.employeeapp;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Scanner;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 import com.cg.employeeapp.model.Employee;
 
@@ -23,6 +25,7 @@ public class App
     	EntityManagerFactory factory = Persistence.createEntityManagerFactory("employee-persistence");
     	EntityManager emgr = factory.createEntityManager();
     	EntityTransaction tx = emgr.getTransaction();
+    	Scanner scan = new Scanner(System.in);
     	
     	// Save a new Employee
     	
@@ -52,16 +55,43 @@ public class App
 
     	
     	// Updating Employee
-    	tx.begin();
-    	Employee employee = emgr.find(Employee.class, 1003);
-    	employee.setEmployeeName("Priyanka Dutta");
-    	tx.commit();
+//    	tx.begin();
+//    	Employee employee = emgr.find(Employee.class, 1003);
+//    	employee.setEmployeeName("Priyanka Dutta");
+//    	tx.commit();
     	
 //		Fetch all the employees
     	
     	Query query = emgr.createQuery("from Employee");
     	List<Employee> employees = query.getResultList();
     	employees.forEach(e->System.out.println(e));
+    	
+//    	String email;
+//    	System.out.println("Enter an email to search for: ");
+//    	email = scan.nextLine();
+//    	
+//    	TypedQuery<Employee> findByEmail = emgr.createQuery("from Employee where email=:email",Employee.class);
+//    	findByEmail.setParameter("email", email);
+//    	
+//    	Employee emp = findByEmail.getSingleResult();
+//    	
+//    	System.out.println(emp);
+    	
+    	
+//    	String name;
+//    	System.out.println("Enter a name to search for: ");
+//    	name = scan.nextLine();
+//    	Query findByName = emgr.createNamedQuery("findByEmployeeName");
+//    	findByName.setParameter("employeeName", name);
+//    	
+//    	Employee emp = (Employee)findByName.getSingleResult();
+//    	
+//    	System.out.println(emp);
+    	
+//    	query = emgr.createNativeQuery("select * from employee_db", Employee.class);
+//    	
+//    	employees = query.getResultList();
+//    	employees.forEach(e->System.out.println(e));
     	
     	
     }

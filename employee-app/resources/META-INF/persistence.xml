@@ -17,13 +17,7 @@
 			<property name="hibernate.dialect"
 				value="org.hibernate.dialect.ProgressDialect" />
 
-			<!-- <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver" 
-				/> <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/cg_aws_db" 
-				/> -->
 
-
-			<!-- <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/postgres" 
-				/> -->
 
 
 
@@ -32,10 +26,9 @@
 			<property name="javax.persistence.jdbc.password"
 				value="password" />
 
-	<!-- 		<property name="hibernate.show_sql" value="true" />
-			<property name="hibernate.format_sql" value="true" /> -->
-			<!-- <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect" 
-				/> -->
+			<property name="hibernate.show_sql" value="true" />
+			<property name="hibernate.format_sql" value="true" />
+
 			<property name="hibernate.hbm2ddl.auto" value="update" />
 
 		</properties>
