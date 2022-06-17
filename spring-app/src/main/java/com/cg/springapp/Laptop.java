@@ -1,10 +1,20 @@
 package com.cg.springapp;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component
 public class Laptop {
 
+	@Value("${laptop.serial}")
 	String serial;
+	@Value("${laptop.brand}")
 	String brand;
+	@Value("${laptop.model}")
 	String model;
+	
+	@Autowired
 	InternetConnection connection;
 	
 	public Laptop() {

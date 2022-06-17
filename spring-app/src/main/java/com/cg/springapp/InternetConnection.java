@@ -1,5 +1,8 @@
 package com.cg.springapp;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class InternetConnection {
 
 	public void connect() {

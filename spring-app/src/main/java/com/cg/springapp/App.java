@@ -18,6 +18,7 @@ public class App
     	
     	Laptop laptop = context.getBean(Laptop.class);
     	
+    
     	laptop.connectToInternet();
     	laptop.browseWebsite();
     	laptop.showLaptopInfo();
