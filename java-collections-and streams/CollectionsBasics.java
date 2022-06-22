@@ -4,10 +4,7 @@ class CollectionBasics{
 
 	public static void main(String []ags){
 		
-		List<String> items = new ArrayList<>();
-
-	// Collection<String> items = new ArrayList<>();
-
+		Collection<String> items = new PriorityQueue<>();
 		items.add("Mahesh");
 		items.add("Tushar");
 		items.add("Suraj");
