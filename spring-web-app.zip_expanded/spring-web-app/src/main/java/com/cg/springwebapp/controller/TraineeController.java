@@ -25,7 +25,7 @@ public class TraineeController {
 	
 	@PostMapping("/add-trainee")
 	public String addTrainee(@ModelAttribute("trainee") Trainee trainee) {
-		return "show-trainee.jsp";
+		return "show-trainee";
 	}
 	
 	
