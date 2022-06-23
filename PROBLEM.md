@@ -448,3 +448,43 @@ public class MobileStore {
 
 
 ```
+## Collections/Exception Handling
+
+1. Accept a list of String from command line and add them to a TreeSet where elements should be sorted in the ascending order of their length 
+
+
+2. Create a list of Student[name,age,height]. Create a custom exception InvalidAgeException that should be thrown when a user enters an age out of the given range of 3-75.
+   - Also sort the list of students by height using a Comparator.
+
+https://www.hackerrank.com/challenges/java-exception-handling-try-catch/problem
+
+HackerRankHackerRank
+Java Exception Handling (Try-catch) | HackerRank
+Use try-catch to test a block of code for errors.
+white_check_mark
+eyes
+raised_hands
+
+
+3. Solve these two hacker rank problems on exception handling
+
+* https://www.hackerrank.com/challenges/java-exception-handling-try-catch/problem
+
+* https://www.hackerrank.com/challenges/java-exception-handling/problem
+
+
+
+4. Write a method that uses lambda expression to format a given string, where a string should be shortened using the first letter or each word.
+For ex., if input is “Indian Railways”, then expected output is “I.R.”.
+
+5. Exercises on Collections and Lambdas-
+* https://www.hackerrank.com/challenges/java-lambda-expressions/problem
+* From a list of string Count String whose length is more than three
+* Remove all empty Strings from List and display the new list
+
+6. Find the distinct employees from a list of employees with duplicate employees
+
+7. Write a Java program to count number of vowels in a given string using regular expression
+
+8. Write a Java program to remove all the vowels of a given string. Return the new string.
+
