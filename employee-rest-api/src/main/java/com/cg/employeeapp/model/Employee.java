@@ -19,17 +19,38 @@ public class Employee {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate hiredate;
 	
+	private String jobTitle;
+	
 	public Employee() {
 
 	}
+	
+	
 
-	public Employee(int id, String employeeName, String email, LocalDate hiredate) {
+	public String getJobTitle() {
+		return jobTitle;
+	}
+
+
+
+	public void setJobTitle(String jobTitle) {
+		this.jobTitle = jobTitle;
+	}
+
+
+
+	
+
+	public Employee(int id, String employeeName, String email, LocalDate hiredate, String jobTitle) {
 		super();
 		this.id = id;
 		this.employeeName = employeeName;
 		this.email = email;
 		this.hiredate = hiredate;
+		this.jobTitle = jobTitle;
 	}
+
+
 
 	public int getId() {
 		return id;

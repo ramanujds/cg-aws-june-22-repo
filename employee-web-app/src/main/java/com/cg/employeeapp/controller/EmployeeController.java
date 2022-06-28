@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.cg.employeeapp.model.Employee;
 import com.cg.employeeapp.service.IEmployeeService;
@@ -23,14 +24,20 @@ public class EmployeeController {
 		return "show-employee.jsp";
 	}
 	
+//	@GetMapping("/search-employee")
+//	public String getEmployee(@RequestParam("empid") int id, Model m) {
+//		Employee employee = service.getEmployeeById(id);
+//		m.addAttribute("employee", employee);
+//		return "show-employee.jsp";
+//	}
+	
+	
 	@GetMapping("/search-employee")
-	public String getEmployee(@RequestParam("empid") int id, Model m) {
+	@ResponseBody
+	public Employee getEmployeeById(@RequestParam("empid") int id) {
 		Employee employee = service.getEmployeeById(id);
-		m.addAttribute("employee", employee);
-		return "show-employee.jsp";
+		return employee;
 	}
-	
-	
 	
 	
 }

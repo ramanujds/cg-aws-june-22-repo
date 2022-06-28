@@ -1,28 +1,26 @@
 package com.cg.employeeapp.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.cg.employeeapp.model.Employee;
-import com.cg.employeeapp.repository.IEmployeeJPARepository;
 import com.cg.employeeapp.repository.IEmployeeRepository;
 
 @Service
-public class EmployeeServiceImpl implements IEmployeeService {
+public class EmployeeServiceImpl implements IEmployeeService{
 
 	@Autowired
-	private IEmployeeJPARepository repo;
+	IEmployeeRepository repo;
 	
 	@Override
 	public Employee saveEmployee(Employee employee) {
-		// return repo.saveEmployee(employee);
 		return repo.save(employee);
 	}
 
 	@Override
-	public Employee getEmployeeById(int id) {
-		// return repo.getEmployeeById(id);
+	public Employee getEmployee(int id) {
 		return repo.findById(id).get();
 	}
 
@@ -32,11 +30,23 @@ public class EmployeeServiceImpl implements IEmployeeService {
 	}
 
 	@Override
-	public boolean deleteEmployee(int id) {
+	public void deleteEmployee(int id) {
 		repo.deleteById(id);
-		return !repo.existsById(id);
 	}
 
+	@Override
+	public List<Employee> findAllEmployees() {
+		return repo.findAll();
+	}
+
+	@Override
+	public Employee searchByEmail(String email) {
+		return repo.findByEmail(email);
+	}
 	
+	@Override
+	public List<Employee> findAllEmployeesByJob(String jobTitle) {
+		return repo.findByJobTitle(jobTitle);
+	}
 	
 }
