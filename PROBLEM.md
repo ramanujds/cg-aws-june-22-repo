@@ -516,3 +516,33 @@ Implement the following operations:
 * **Maintain Java Coding Standard.**
 * **Use layered architecture**
 
+
+## Exercises on Regular Expression
+
+**Email Validation**
+_String input1="test@gmail.com"_
+1)@ & . should be present;
+2)@ & . should not be repeated;
+3)there should be five charcters between @ and .;
+4)there should be atleast 3 characters before @ ;
+5)the end of mail id should be .com;
+
+**Validate Password**
+_validation based on following criteria:_
+- minimum length is 8
+- should contain any of these @/_/#
+- should not start with number/special chars(@/#/_)
+- should not end with special chars
+- can contain numbers,letters,special chars
+
+
+**PAN card number validation:**
+* all letters shud be in caps,shud be of 8 chars.
+* first three letters must be alphabets.
+* next 4 letters shud be digits and last letter shud be an alphabet
+
+
+
+
+
+
