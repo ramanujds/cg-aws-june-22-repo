@@ -521,11 +521,11 @@ Implement the following operations:
 
 **Email Validation**
 _String input1="test@gmail.com"_
-1)@ & . should be present;
-2)@ & . should not be repeated;
-3)there should be five charcters between @ and .;
-4)there should be atleast 3 characters before @ ;
-5)the end of mail id should be .com;
+1. @ & . should be present;
+1. @ & . should not be repeated;
+1. there should be five charcters between @ and .;
+1. there should be atleast 3 characters before @ ;
+1. the end of mail id should be .com;
 
 **Validate Password**
 _validation based on following criteria:_
