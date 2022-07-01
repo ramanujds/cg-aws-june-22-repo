@@ -1,5 +1,7 @@
 package com.cg.employeeapp.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,6 +32,21 @@ public class EmployeeController {
 		Employee employee = service.getEmployee(id);
 		m.addAttribute("employee", employee);
 		return "show-employee.jsp";
+	}
+	
+	@GetMapping("/show-all")
+	public String showAllEmployees(Model m) {
+		List<Employee> employeeList = service.getAllEmployee();
+		m.addAttribute("employees", employeeList);
+		return "show-all.jsp";
+	}
+	
+	@GetMapping("/delete")
+	public String deleteEmployee(@RequestParam("id") int id ,Model m) {
+		service.deleteEmployee(id);
+		List<Employee> employeeList = service.getAllEmployee();
+		m.addAttribute("employees", employeeList);
+		return "show-all.jsp";
 	}
 	
 	
