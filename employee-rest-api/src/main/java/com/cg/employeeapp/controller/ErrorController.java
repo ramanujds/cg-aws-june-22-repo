@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import com.cg.employeeapp.exception.DuplicateEmployeeException;
 import com.cg.employeeapp.exception.EmployeeNotFoundException;
+import com.cg.employeeapp.exception.InvalidCredentialsException;
 
 @RestControllerAdvice
 public class ErrorController {
@@ -21,6 +22,13 @@ public class ErrorController {
 	@ResponseStatus(code = HttpStatus.CONFLICT)
 	public String handleDuplicateEmployeeException(Exception ex) {
 		return ex.getMessage();
+	}
+	
+	@ResponseStatus(code = HttpStatus.UNAUTHORIZED)
+	@ExceptionHandler(InvalidCredentialsException.class)
+	public String handleInvalidCredentialsException(Exception ex) {
+		return ex.getMessage();
+				
 	}
 	
 }
